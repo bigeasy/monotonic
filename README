@@ -1,0 +1,17 @@
+Monotonic
+
+Iterate an MVCC b-tree skipping defunct versions of the records.
+
+    Discussion:     http://github.com/bigeasy/monotonic/issues/1
+
+    Documentation:  http://bigeasy.github.io/monotonic
+    Source:         http://github.com/bigeasy/monotonic
+    Issues:         http://github.com/bigeasy/monotonic/issues
+
+    Install:        `npm install monotonic`
+
+    License:        MIT
+
+To learn everything you want to know about Monotonic start here:
+
+    http://bigeasy.github.io/monotonic
