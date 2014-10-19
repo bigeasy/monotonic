@@ -1,3 +1,4 @@
+```
 Monotonic
 
 Methods to implement a JSON friendly monotonic data type with no upper bound.
@@ -15,3 +16,4 @@ Methods to implement a JSON friendly monotonic data type with no upper bound.
 To learn everything you want to know about Monotonic start here:
 
     http://bigeasy.github.io/monotonic
+```
