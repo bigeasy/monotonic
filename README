@@ -1,6 +1,6 @@
 Monotonic
 
-Iterate an MVCC b-tree skipping defunct versions of the records.
+Methods to implement a JSON friendly monotonic data type with no upper bound.
 
     Discussion:     http://github.com/bigeasy/monotonic/issues/1
 

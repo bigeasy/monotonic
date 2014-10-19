@@ -2,7 +2,10 @@
     "name":             "monotonic",
     "version":          "9.9.9",
     "author":           "Alan Gutierrez <alan@prettyrobots.com>",
-    "description":      "Iterate an MVCC b-tree skipping defunct versions of the records.",
+    "description":
+
+        "Methods to implement a JSON friendly monotonic data type with no upper bound.",
+
     "keywords":
     [
                         "monotonic", "identifier", "bigint"
