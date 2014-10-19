@@ -1,37 +1,32 @@
 {
-    "name":             "skip",
+    "name":             "monotonic",
     "version":          "9.9.9",
     "author":           "Alan Gutierrez <alan@prettyrobots.com>",
     "description":      "Iterate an MVCC b-tree skipping defunct versions of the records.",
     "keywords":
     [
-                        "btree", "leveldb", "levelup", "binary", "mvcc",
-                        "database", "json", "b-tree", "concurrent", "persistence"
+                        "monotonic", "identifier", "bigint"
     ],
     "contributors":     [],
-    "homepage":         "https://github.com/bigeasy/skip",
-    "bugs":             "https://github.com/bigeasy/skip/issues",
+    "homepage":         "https://github.com/bigeasy/monotonic",
+    "bugs":             "https://github.com/bigeasy/monotonic/issues",
     "licenses":
     [{
                         "type": "MIT",
-                        "url": "http://github.com/bigeasy/skip/raw/master/LICENSE"
+                        "url": "http://github.com/bigeasy/monotonic/raw/master/LICENSE"
     }],
     "main":             "monotonic.js",
     "repository":
     {
                         "type": "git",
-                        "url": "http://github.com/bigeasy/skip.git"
+                        "url": "http://github.com/bigeasy/monotonic.git"
     },
     "dependencies":
     {
-                        "cadence":            "0.0.43",
-                        "riffle":             "0.0.11"
     },
     "devDependencies":
     {
-                        "proof":              "0.0.50",
-                        "b-tree":             "0.0.28",
-                        "revise":             "0.0.3"
+                        "proof":              "0.0.50"
     },
     "scripts":
     {
