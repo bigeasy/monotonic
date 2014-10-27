@@ -49,3 +49,13 @@ exports.toString = function (words, bits) {
     }
     return string
 }
+
+exports.difference = function (these, those) {
+    these = these.slice().reverse()
+    those = those.slice().reverse()
+    var difference = 0
+    for (var i = 0, I = Math.max(these.length, those.length); i < I; i++) {
+        difference += ((these[i] || 0) - (those[i] || 0)) * Math.pow(2, 32 * i)
+    }
+    return difference
+}

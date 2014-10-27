@@ -1,3 +1,4 @@
 ### Issue by Issue
 
+ * Implement `difference`. #9.
  * Import monotonic functions from Paxos. #7.

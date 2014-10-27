@@ -1,4 +1,4 @@
-require('proof')(10, function (assert) {
+require('proof')(13, function (assert) {
     var Id = require('../..')
 
     assert(Id.parse('1fffffffff'), [ 0x1f, 0xffffffff ], 'parse two words')
@@ -16,4 +16,8 @@ require('proof')(10, function (assert) {
 
     assert(Id.toString(ids[0]), '1ffffffff', 'to string')
     assert(Id.toString(ids[0], 64), '00000001ffffffff', 'to string')
+
+    assert(Id.difference(Id.parse('100000000'), ids[1]), 1, 'differnce')
+    assert(Id.difference(Id.parse('100000000'), Id.parse('fffffffe')), 2, 'difference 2')
+    assert(Id.difference(Id.parse('fffffffe'), Id.parse('100000000')), -2, 'difference -2')
 })
