@@ -1,4 +1,5 @@
 ### Issue by Issue
 
+ * Update license for 2015. #11.
  * Implement `difference`. #9.
  * Import monotonic functions from Paxos. #7.
