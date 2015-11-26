@@ -13,11 +13,7 @@
     "contributors":     [],
     "homepage":         "https://github.com/bigeasy/monotonic",
     "bugs":             "https://github.com/bigeasy/monotonic/issues",
-    "licenses":
-    [{
-                        "type": "MIT",
-                        "url": "http://github.com/bigeasy/monotonic/raw/master/LICENSE"
-    }],
+    "license":          "MIT",
     "main":             "monotonic.js",
     "repository":
     {
