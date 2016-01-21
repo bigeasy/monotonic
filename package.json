@@ -1,6 +1,6 @@
 {
     "name":             "monotonic",
-    "version":          "0.0.3",
+    "version":          "1.0.0",
     "author":           "Alan Gutierrez <alan@prettyrobots.com>",
     "description":
 
@@ -25,7 +25,7 @@
     },
     "devDependencies":
     {
-                        "proof":              "0.0.57"
+                        "proof":              "1.0.x"
     },
     "scripts":
     {
