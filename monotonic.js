@@ -47,6 +47,22 @@ var Part = {
         }
         return words
     },
+    add: function (words, value) {
+        var words.slice()
+        var carry = value
+        for (var i = words.length - 1; i != -1; i--) {
+            words[i] += carry
+            if (words[i] > 0xffffffff) {
+                carry = words[i] >>> 4
+                words[i] = words[i] & 0xffffffff
+            } else {
+                carry = 0
+            }
+        }
+        if (carry != 0) {
+            words.unshift(carry)
+        }
+    },
     difference: function (these, those) {
         these = these.slice().reverse()
         those = those.slice().reverse()
