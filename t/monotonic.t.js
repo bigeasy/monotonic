@@ -1,4 +1,4 @@
-require('proof')(17, prove)
+require('proof/redux')(17, prove)
 
 function prove (assert) {
     var Monotonic = require('..')
