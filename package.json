@@ -1,34 +1,34 @@
 {
-    "name":             "monotonic",
-    "version":          "2.0.0",
-    "author":           "Alan Gutierrez <alan@prettyrobots.com>",
+    "name":                 "monotonic",
+    "version":              "2.0.0",
     "description":
 
-        "Methods to implement a JSON friendly monotonic data type with no upper bound.",
+      "Methods to implement a JSON friendly monotonic data type with no upper bound.",
 
     "keywords":
     [
-                        "monotonic", "identifier", "bigint"
+                            "monotonic", "identifier", "bigint"
     ],
-    "contributors":     [],
-    "homepage":         "https://github.com/bigeasy/monotonic",
-    "bugs":             "https://github.com/bigeasy/monotonic/issues",
-    "license":          "MIT",
-    "main":             "monotonic.js",
+    "author":               "Alan Gutierrez <alan@prettyrobots.com>",
+    "contributors":         [],
+    "homepage":             "https://github.com/bigeasy/monotonic",
+    "bugs":                 "https://github.com/bigeasy/monotonic/issues",
+    "license":              "MIT",
     "repository":
     {
-                        "type": "git",
-                        "url": "http://github.com/bigeasy/monotonic.git"
+                            "type": "git",
+                            "url": "http://github.com/bigeasy/monotonic.git"
     },
     "dependencies":
     {
     },
     "devDependencies":
     {
-                        "proof":              "1.x"
+                            "proof":                        "1.2.x"
     },
+    "main":                 "monotonic",
     "scripts":
     {
-                        "test": "proof platform win32 && proof test */*.t.js || t/test"
+                            "test": "proof platform win32 && proof test */*.t.js || t/test"
     }
 }
