@@ -1,7 +1,7 @@
 require('proof')(17, prove)
 
 function prove (assert) {
-    var Monotonic = require('../..')
+    var Monotonic = require('..')
 
     assert(Monotonic.toString(Monotonic.toWords('88888888/888888888')), '88888888/888888888', 'parse')
     assert(Monotonic.asString.compare('0', '0'), 0, 'compare equal')
