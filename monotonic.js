@@ -33,7 +33,7 @@ var Part = {
         return compare
     },
     increment: function (words) {
-        var words = words.slice()
+        words = words.slice()
         for (var i = words.length - 1; i != -1; i--) {
             if (words[i] == 0xffffffff) {
                 words[i] = 0
@@ -44,6 +44,23 @@ var Part = {
         }
         if (words[0] == 0) {
             words.unshift(0x1)
+        }
+        return words
+    },
+    add: function (words, value) {
+        words = words.slice()
+        var carry = value
+        for (var i = words.length - 1; i != -1; i--) {
+            words[i] += carry
+            if (words[i] > 0xffffffff) {
+                carry = Math.floor(words[i] / Math.pow(2, 32))
+                words[i] = words[i] & 0xffffffff
+            } else {
+                carry = 0
+            }
+        }
+        if (carry != 0) {
+            words.unshift(carry)
         }
         return words
     },
@@ -63,6 +80,9 @@ var Part = {
             return Part.compare(Part.toWords(a), Part.toWords(b))
         },
         increment: function (number) {
+            return Part.toString(Part.increment(Part.toWords(number)))
+        },
+        add: function (number, value) {
             return Part.toString(Part.increment(Part.toWords(number)))
         },
         difference: function (a, b) {
@@ -102,6 +122,11 @@ var Path = {
         }
         return number
     },
+    add: function (number, value, index) {
+        number = Path.toWords(Path.toString(number))
+        number[number.length - 1] = Part.add(number[number.length - 1], value)
+        return number
+    },
     difference: function (a, b, index) {
         return Part.difference(a[index], b[index])
     },
@@ -125,6 +150,9 @@ var Path = {
         },
         increment: function (number, index) {
             return Path.toString(Path.increment(Path.toWords(number), index))
+        },
+        add: function (number, value) {
+            return Path.toString(Path.add(Path.toWords(number), value))
         },
         isBoundary: function (number, index) {
             return Path.isBoundary(Path.toWords(number), index)

@@ -1,4 +1,4 @@
-require('proof/redux')(17, prove)
+require('proof/redux')(20, prove)
 
 function prove (assert) {
     var Monotonic = require('..')
@@ -12,6 +12,8 @@ function prove (assert) {
     assert(Monotonic.asString.increment('0/ffffffff', 1), '0/100000000', 'increment roll over')
     assert(Monotonic.asString.increment('0/fffffffe', 1), '0/ffffffff', 'increment roll over')
     assert(Monotonic.asString.increment('0/fffffffe', 0), '1/0', 'increment path roll over')
+    assert(Monotonic.asString.add('0/fffffffa', 5), '0/ffffffff', 'add no carry')
+    assert(Monotonic.asString.add('0/fffffffa', 7), '0/100000001', 'add carry')
     assert(!Monotonic.asString.isBoundary('0/fffffffe', 0), 'is not boundary')
     assert(Monotonic.asString.isBoundary('fffffffe/0', 0), 'is boundary')
     assert(Monotonic.asString.compareIndex('0', '0', 0), 0, 'compare index')
@@ -22,4 +24,5 @@ function prove (assert) {
 
     assert(Monotonic.Part.asString.compare('0', '0'), 0, 'part difference')
     assert(Monotonic.Part.asString.increment('0'), '1', 'part increment')
+    assert(Monotonic.Part.asString.add('0', 1), '1', 'part add')
 }
