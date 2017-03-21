@@ -122,7 +122,7 @@ var Path = {
         }
         return number
     },
-    add: function (number, value, index) {
+    add: function (number, value) {
         number = Path.toWords(Path.toString(number))
         number[number.length - 1] = Part.add(number[number.length - 1], value)
         return number
