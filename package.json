@@ -1,6 +1,6 @@
 {
     "name":                 "monotonic",
-    "version":              "2.1.1",
+    "version":              "2.1.2",
     "description":
 
       "Methods to implement a JSON friendly monotonic data type with no upper bound.",
