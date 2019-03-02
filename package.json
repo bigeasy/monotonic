@@ -29,6 +29,6 @@
     "main":                 "monotonic",
     "scripts":
     {
-                            "test": "proof platform win32 && proof test */*.t.js || t/test"
+                            "test": "proof test test/*.t.js"
     }
 }
