@@ -1,0 +1,28 @@
+describe('monontic', () => {
+    const assert = require('assert')
+    const Monotonic = require('..')
+    it('can do number stuff', () => {
+        assert.equal(Monotonic.toString(Monotonic.toWords('88888888/888888888')), '88888888/888888888', 'parse')
+        assert.equal(Monotonic.asString.compare('0', '0'), 0, 'compare equal')
+        assert(Monotonic.asString.compare('100000000', 'ffffffff') > 0, 'compare longer than')
+        assert(Monotonic.asString.compare('fffffffe', 'ffffffff') < 0, 'compare less than')
+        assert(Monotonic.asString.compare('ffffffff', 'fffffffe') > 0, 'compare less than')
+        assert(Monotonic.asString.compare('ffffffff', 'fffffffe') > 0, 'compare less than')
+        assert.equal(Monotonic.asString.increment('0/ffffffff', 1), '0/100000000', 'increment roll over')
+        assert.equal(Monotonic.asString.increment('0/fffffffe', 1), '0/ffffffff', 'increment roll over')
+        assert.equal(Monotonic.asString.increment('0/fffffffe', 0), '1/0', 'increment path roll over')
+        assert.equal(Monotonic.asString.add('0/fffffffa', 5), '0/ffffffff', 'add no carry')
+        assert.equal(Monotonic.asString.add('0/fffffffa', 7), '0/100000001', 'add carry')
+        assert(!Monotonic.asString.isBoundary('0/fffffffe', 0), 'is not boundary')
+        assert(Monotonic.asString.isBoundary('fffffffe/0', 0), 'is boundary')
+        assert.equal(Monotonic.asString.compareIndex('0', '0', 0), 0, 'compare index')
+
+        assert.equal(Monotonic.Part.asString.difference('100000000', 'ffffffff'), 1, 'differnce')
+        assert.equal(Monotonic.asString.difference('100000000', 'fffffffe', 0), 2, 'difference 2')
+        assert.equal(Monotonic.asString.difference('fffffffe', '100000000', 0), -2, 'difference -2')
+
+        assert.equal(Monotonic.Part.asString.compare('0', '0'), 0, 'part difference')
+        assert.equal(Monotonic.Part.asString.increment('0'), '1', 'part increment')
+        assert.equal(Monotonic.Part.asString.add('0', 1), '1', 'part add')
+    })
+})
