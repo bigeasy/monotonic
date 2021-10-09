@@ -1,6 +1,6 @@
 {
     "name":                 "monotonic",
-    "version":              "3.0.8",
+    "version":              "3.0.9",
     "description":
 
       "Methods to implement a JSON friendly monotonic data type with no upper bound.",
@@ -24,7 +24,7 @@
     },
     "devDependencies":
     {
-                            "proof": "^9.0.3"
+                            "proof":                        "^9.0.3"
     },
     "main":                 "monotonic",
     "scripts":
